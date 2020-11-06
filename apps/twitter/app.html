@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MilkApps</title>
+		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+		<link href="/favicon.ico" rel="icon" type="image/x-icon">
+		<meta charset="utf-8">
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+		<link href="/style.css" rel="stylesheet">
+		<script src="/etc/playsound.js"></script>
+	</head>
+	<body><center>
+		<img src="icon.png" class="corner">
+		<div style="width: 100vw; height: 80px; position: absolute; top: 0; left: 0; background-color: gray; color: white">
+			<button style="position: absolute; top: 15px; left: 15px; font-size: 200%; background-color: gray; color: white" onclick="window.location.href = '/install.html'">< Back</button>
+			<h1 id="name"></h1>
+		</div>
+		<br>
+		<br>
+		<br>
+		<h2 id="dev"></h2>
+		<button onclick="installC()">Install</button><button onclick="tryC()">Try</button>
+		<p id="description"></p>
+		<p id="reward"></p>
+		<h5 id="id"></h5>
+		<script src="info.js"></script>
+	</center></body>
+</html>
