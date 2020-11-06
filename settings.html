@@ -12,7 +12,7 @@
 		<h1>Settings</h1>
 		<h2>Notifications</h2>
 		<p>If you enable notifications, you'll get notifications about install success and other events.</p>
-		<button onclick="Cookies.set('aP', 'yes')">Enable</button>
+		<button onclick="/*Cookies.set('aP', 'yes')*/Notification.requestPermission()">Enable</button>
 		<h2><a href="/etc/loadcode.html">Load/Get a code</a></h2>
 		<h2 style="color:red">Clear data</h2>
 		<button onclick="if(confirm('Are you sure?')) Cookies.set('actions', '[]'); location.reload()">Clear actions history</button><button onclick="rmA(true)">Delete all apps</button><button onclick="rmE()">Clear everything</button>
