@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Request an app!</title>
+		<meta charset="utf-8">
+		<link href="/style.css" rel="stylesheet">
+		<style>
+			* {
+				padding: 6px;
+				margin: 6px;
+				border-radius: 6px;
+			}
+		</style>
+		<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+	</head>
+	<body>
+		<form onsubmit="go(); return false">
+			<b>Name: </b> <input id="name" required>
+			<br>
+			<b>ID: </b> <input id="id" required>
+			<br>
+			<b>Developer: </b> <input id="dev" required>
+			<br>
+			<b>URL: </b> <input type="url" id="url" required><i>URL to a website to be used in the app. You can also link a cloud drive, I'll add the app data to the MilkApps files.</i>
+			<br>
+			<b>Description: </b> <textarea id="desc"></textarea>
+			<br>
+			<b>Reward: </b> <input type="number" id="reward" value="0"><i>Hint: insert a negative number to make your application paid!</i>
+			<br>
+			<b>E-Mail: </b> <input type="email" id="email">
+			<br>
+			<b>Icon URL: </b> <input id="icon">
+			<br>
+			<input type="submit" value="Request">
+		</form>
+		<script src="send.js"></script>
+	</body>
+</html>
