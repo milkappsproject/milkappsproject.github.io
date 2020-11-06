@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MilkApps</title>
+		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+		<link href="/favicon.ico" rel="icon" type="image/x-icon">
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+		<link href="/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<i>Code: </i><input id="code"><button onclick="loadcode()">Load</button><br>
+		<i>E-mail: </i><input id="getter"><button onclick="sendcode(document.getElementById('getter').value, window.btoa(JSON.stringify(Cookies.get())))">Send the code</button>
+		<script>
+			emailjs.init("user_7ZQZarn0OCUZePzpBXrO8");
+			function rmA(shC){
+				if(shC) if(!confirm("Are you sure?")) return null;
+				var apps = JSON.parse(Cookies.get("apps"));
+				for(var i = 0; i < apps.length; i++) Cookies.remove(apps[i].id);
+				Cookies.set("apps", "[]");
+			}
+			function rmE(){
+				if(!confirm("Are you sure? All the data will be completely replaced with new!")) return false;
+				rmA(false);
+				Cookies.set("actions", "[]");
+				Cookies.set("balance", "0");
+				Cookies.set("gotbonus", "0");
+				return true;
+			}
+			function loadcode(){
+				if(!rmE()) return false;
+				var data = JSON.parse(window.atob(document.getElementById("code").value));
+				for(var i = 0; i < Object.keys(data).length; i++)
+					Cookies.set(Object.keys(data)[i], data[Object.keys(data)[i]]);
+			}
+			function sendcode(get, code){
+				emailjs.send("service_1l1v4po", "template_code", {
+					get: get,
+					code: code,
+				});
+			}
+		</script>
+	</body>
+</html>
