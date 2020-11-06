@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MilkApps</title>
+		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+		<link href="/favicon.ico" rel="icon" type="image/x-icon">
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+		<link href="style.css" rel="stylesheet">
+		<script src="/etc/playsound.js"></script>
+	</head>
+	<body>
+		<h1>Add a custom app!</h1>
+		<form onsubmit="return crt()">
+			<i>Name: </i><input id="name"><br>
+			<i>ID: </i><input id="id"><br>
+			<i>URL: </i><input id="url" type="url"><br>
+			<i>Description: </i><br>
+			<textarea id="description"></textarea><br>
+			<input type="submit" value="Create!">
+			<a href="request">Request an app to be added to the apps collection</a>
+		</form>
+		<script>
+			function crt(){
+				Cookies.set("apps", JSON.stringify(JSON.parse(Cookies.get("apps")).concat([document.getElementById("id").value])));
+				Cookies.set(document.getElementById("id").value, JSON.stringify({
+						"id": document.getElementById("id").value,
+						"link": document.getElementById("url").value,
+						"dev": "LOCAL",
+						"description": document.getElementById("description").value,
+						"name": document.getElementById("name").value,
+						"reward": "0"
+				}));
+				Cookies.set("actions", JSON.stringify(JSON.parse(Cookies.get("actions")).concat(["Installed " + document.getElementById("name").value + " (Custom)"])));
+				playsound("/resources/audio/install_custom.wav");
+				return false;
+			}
+		</script>
+	</body>
+</html>

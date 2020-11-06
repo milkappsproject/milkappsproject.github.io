@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MilkApps</title>
+		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+		<link href="/favicon.ico" rel="icon" type="image/x-icon">
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1>Settings</h1>
+		<h2>Notifications</h2>
+		<p>If you enable notifications, you'll get notifications about install success and other events.</p>
+		<button onclick="Cookies.set('aP', 'yes')">Enable</button>
+		<h2><a href="/etc/loadcode.html">Load/Get a code</a></h2>
+		<h2 style="color:red">Clear data</h2>
+		<button onclick="if(confirm('Are you sure?')) Cookies.set('actions', '[]'); location.reload()">Clear actions history</button><button onclick="rmA(true)">Delete all apps</button><button onclick="rmE()">Clear everything</button>
+		<h2>Links</h2>
+		<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" target="_blank" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" target="_blank" title="Flaticon">www.flaticon.com</a></div><br>
+		<div>SFX by ToneDock (<a href="https://www.tonedock.com/samplepacks/6" target="_blank">Link</a>)</div>
+		<h2>Actions</h2>
+		<div id="actions"></div>
+		<script>
+			function rmA(shC){
+				if(shC) if(!confirm("Are you sure?")) return null;
+				var apps = JSON.parse(Cookies.get("apps"));
+				for(var i = 0; i < apps.length; i++) Cookies.remove(apps[i].id);
+				Cookies.set("apps", "[]");
+				Cookies.set("gotbonus", "[]");
+			}
+			function rmE(){
+				if(!confirm("Are you sure?")) return null;
+				rmA(false);
+				Cookies.set("actions", "[]");
+				Cookies.set("balance", "0");
+				Cookies.set("gotbonus", "[]");
+				location.reload();
+			}
+			var actions = JSON.parse(Cookies.get("actions"));
+			for(var i = 0; i < actions.length; i++) document.getElementById("actions").innerHTML = "<b>" + actions[i] + "</b><br>" + document.getElementById("actions").innerHTML;
+		</script>
+	</body>
+</html>

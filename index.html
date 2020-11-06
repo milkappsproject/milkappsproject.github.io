@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MilkApps</title>
+		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+		<link href="/favicon.ico" rel="icon" type="image/x-icon">
+		<meta charset="utf-8">
+		<meta name="description" content="MilkApps">
+		<meta name="keywords" content="MilkApps, Milk, Milk_Cool, Apps, Online apps, Web, Online, Cookies, EffGhAsdf881_K">
+		<meta name="author" content="Milk_Cool">
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+		<script src="/etc/playsound.js"></script>
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		<sidebar>
+			<img src="resources/home.png" width="40" height="40" style="cursor: pointer; padding: 5px;" onclick="$('#content').attr('src', 'appslist.html'); playsound('/resources/audio/select.wav');"><br>
+			<img src="resources/install.png" width="40" height="40" style="cursor: pointer; padding: 5px;" onclick="$('#content').attr('src', 'install.html'); playsound('/resources/audio/select.wav');"><br>
+			<img src="resources/add.png" width="40" height="40" style="cursor: pointer; padding: 5px;" onclick="$('#content').attr('src', 'add.html'); playsound('/resources/audio/select.wav');"><br>
+			<img src="resources/balance.png" width="40" height="40" style="cursor: pointer; padding: 5px;" onclick="showBal(); playsound('/resources/audio/select.wav');"><br>
+			<img src="resources/settings.png" width="40" height="40" style="cursor: pointer; padding: 5px;" onclick="$('#content').attr('src', 'settings.html'); playsound('/resources/audio/select.wav');"><br>
+		</sidebar>
+		<hint><span>Balance: 0 points</span></hint>
+		<iframe id="content" style="border: none;" src="appslist.html">Looks like your rowser doesn't support HTML5. Please use a modern browser(like Chrome)</iframe>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>

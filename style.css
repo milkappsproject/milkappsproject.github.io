@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+html * {
+	font-family: 'Montserrat Alternates', sans-serif;
+}
+sidebar {
+	display: block;
+	width: 50px;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: -50px;
+	background: #DEDEDE;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+hint {
+	display: none;
+	width: 350px;
+	opacity: 0;
+	height: 50px;
+	position: fixed;
+	top: 162px;
+	left: 70px;
+	z-index: 5;
+	border-radius: 5px;
+	background: #DEDEDE;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+hint * {
+	font-size: 20px;
+	position: fixed;
+	top: 175px;
+}
+iframe#content {
+	display: block;
+	width: calc(100vw - 50px);
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 50px;
+}
+div#app {
+	width: 100vw;
+	height: 75px;
+}
+input {
+	padding: 3px;
+	margin: 1.5px;
+}
+button, input[type = "submit"] {
+	margin: 3px;
+	border: 0;
+	border-radius: 5px;
+	font-size: 110%;
+	cursor: pointer;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	transition: 0.5s;
+}
+button:hover, input[type = "submit"]:hover {
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+	transition: 0.5s;
+}
+textarea {
+	max-width: 700px;
+	max-height: 350px;
+	border-radius: 15px;
+}
+card {
+	display: block;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	width: 528px;
+	height: 128px;
+	background-color: #ACACAC;
+	transition: 0.5s;
+}
+card:hover {
+	transition: 0.5s;
+	border-radius: 30px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+card img {
+	float: left;
+	position: absolute;
+	cursor: pointer;
+	margin: 14px;
+}
+card h1 {
+	padding-left: 128px;
+}
+sidebar img {
+	filter: brightness(0.75);
+	transition: 0.5s;
+}
+sidebar img:hover {
+	filter: brightness(1);
+	transform: scale(1.15);
+	transition: 0.5s;
+}
+img.corner {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 128px;
+	height: 128px;
+	z-index: 2;
+}
