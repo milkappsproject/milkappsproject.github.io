@@ -4,9 +4,9 @@ var urlParam = function(name){
 }
 var appi = {
 	"id": urlParam("id"),
-	"dev": urlParam("dev"),
+	"dev": urlParam("dev").replace(/%20/gi, " "),
 	"link": urlParam("link"),
-	"name": urlParam("name"),
+	"name": urlParam("name").replace(/%20/gi, " "),
 	"description": urlParam("description").replace(/%20/gi, " "),
 	"reward": Number(urlParam("reward"))
 }
